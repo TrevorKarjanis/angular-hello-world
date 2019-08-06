@@ -2,12 +2,12 @@
   "name": "hello-world",
   "version": "1.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "deploy": "ng deploy",
+    "e2e": "ng e2e",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "ng serve",
+    "test": "ng test"
   },
   "author": "Trevor Karjanis",
   "description": "This package provides an Angular hello world application.",
