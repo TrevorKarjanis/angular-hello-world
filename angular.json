@@ -76,8 +76,13 @@
           "options": {
             "browserTarget": "hello-world:build"
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "hello-world"
 }
