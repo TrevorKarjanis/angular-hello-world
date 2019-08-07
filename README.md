@@ -1,6 +1,6 @@
 # Angular Hello World
 
-This is an Angular hello world application that demonstrates data binding and RxJS observables. View a demo of the application at [https://trevorkarjanis.github.io/angular-hello-world](https://trevorkarjanis.github.io/angular-hello-world).
+This is an Angular hello world application that demonstrates data binding and RxJS observables. It includes debounced user input and a message service that recycles ongoing requests. View a demo of the application at [https://trevorkarjanis.github.io/angular-hello-world](https://trevorkarjanis.github.io/angular-hello-world).
 
 This project was built with [Angular](https://angular.io/) and [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0-next.0.
 

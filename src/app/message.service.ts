@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
-import { takeUntil, tap, map, share } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { finalize, map, share, takeUntil } from 'rxjs/operators';
 
 @Injectable()
 export class MessageService implements OnDestroy {
@@ -17,11 +17,11 @@ export class MessageService implements OnDestroy {
 
     get<R>(id: string): Observable<R> {
         if (this.requests[id]) return this.requests[id];
-        return this.requests[id] = this.http.get('resources/${id}').pipe(
+        return this.requests[id] = this.http.get(`resources/${id}`).pipe(
             takeUntil(this.destroy$),
-            tap(_ => delete this.requests[id]),
             map(data => data as R),
+            finalize(() => delete this.requests[id]),
             share()
-        )
+        );
     }
 }
