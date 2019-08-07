@@ -17,7 +17,7 @@ export class MessageService implements OnDestroy {
 
     get<R>(id: string): Observable<R> {
         if (this.requests[id]) return this.requests[id];
-        return this.requests[id] = this.http.get('resources/${id}').pipe(
+        return this.requests[id] = this.http.get(`resources/${id}`).pipe(
             takeUntil(this.destroy$),
             tap(_ => delete this.requests[id]),
             map(data => data as R),
